@@ -1,0 +1,52 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "node js api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp dev",
+    "nodemon": "nodemon build/ --exec",
+    "start": "npm run nodemon & gulp dev",
+    "build": "gulp build --production",
+    "start:prod": "babel-node --require dotenv/config --require babel-register src/"
+  },
+  "keywords": [
+    "node",
+    "rest",
+    "api",
+    "js"
+  ],
+  "author": "PavelNestor",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/register": "^7.6.2",
+    "babel-plugin-dotenv": "^0.1.1",
+    "del": "5.1.0",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "gulp": "4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-nodemon": "^2.4.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      [
+        "babel-plugin-dotenv",
+        {
+          "replacedModuleName": "babel-dotenv"
+        }
+      ]
+    ]
+  }
+}
